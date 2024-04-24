@@ -1,0 +1,8 @@
+const ROLES = {
+    ROLE_ADMIN : "ROLE_ADMIN",
+    ROLE_PLATFORM_ADMIN : "ROLE_PLATFORM_ADMIN",
+    ROLE_PLATFORM_USER : "ROLE_PLATFORM_USER",
+};
+module.exports = {
+    ROLES
+}
