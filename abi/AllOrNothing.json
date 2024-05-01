@@ -1,0 +1,421 @@
+[
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_token",
+				"type": "address"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"inputs": [],
+		"name": "AllOrNothingFeeNotDisbursed",
+		"type": "error"
+	},
+	{
+		"inputs": [],
+		"name": "AllOrNothingInvalidInput",
+		"type": "error"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "AllOrNothingNotClaimable",
+		"type": "error"
+	},
+	{
+		"inputs": [],
+		"name": "AllOrNothingNotSuccessful",
+		"type": "error"
+	},
+	{
+		"inputs": [],
+		"name": "AllOrNothingRewardExists",
+		"type": "error"
+	},
+	{
+		"inputs": [],
+		"name": "AllOrNothingTransferFailed",
+		"type": "error"
+	},
+	{
+		"inputs": [],
+		"name": "AllOrNothingUnAuthorized",
+		"type": "error"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "backer",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "bytes32",
+				"name": "reward",
+				"type": "bytes32"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "pledgeAmount",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "tokenId",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "bool",
+				"name": "isPreLaunchPledge",
+				"type": "bool"
+			},
+			{
+				"indexed": false,
+				"internalType": "bytes32[]",
+				"name": "rewards",
+				"type": "bytes32[]"
+			}
+		],
+		"name": "Receipt",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "tokenId",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "refundAmount",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "claimer",
+				"type": "address"
+			}
+		],
+		"name": "RefundClaimed",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "bytes32",
+				"name": "rewardName",
+				"type": "bytes32"
+			},
+			{
+				"components": [
+					{
+						"internalType": "uint256",
+						"name": "rewardValue",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "isRewardTier",
+						"type": "bool"
+					},
+					{
+						"internalType": "bytes32[]",
+						"name": "itemId",
+						"type": "bytes32[]"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "itemValue",
+						"type": "uint256[]"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "itemQuantity",
+						"type": "uint256[]"
+					}
+				],
+				"indexed": false,
+				"internalType": "struct AllOrNothing.Reward",
+				"name": "reward",
+				"type": "tuple"
+			}
+		],
+		"name": "RewardAdded",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "bytes32",
+				"name": "rewardName",
+				"type": "bytes32"
+			}
+		],
+		"name": "RewardRemoved",
+		"type": "event"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "bytes32",
+				"name": "rewardName",
+				"type": "bytes32"
+			},
+			{
+				"components": [
+					{
+						"internalType": "uint256",
+						"name": "rewardValue",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "isRewardTier",
+						"type": "bool"
+					},
+					{
+						"internalType": "bytes32[]",
+						"name": "itemId",
+						"type": "bytes32[]"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "itemValue",
+						"type": "uint256[]"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "itemQuantity",
+						"type": "uint256[]"
+					}
+				],
+				"internalType": "struct AllOrNothing.Reward",
+				"name": "reward",
+				"type": "tuple"
+			}
+		],
+		"name": "addReward",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "claimRefund",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "disburseFees",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getRaisedAmount",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "bytes32",
+				"name": "rewardName",
+				"type": "bytes32"
+			}
+		],
+		"name": "getReward",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "uint256",
+						"name": "rewardValue",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "isRewardTier",
+						"type": "bool"
+					},
+					{
+						"internalType": "bytes32[]",
+						"name": "itemId",
+						"type": "bytes32[]"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "itemValue",
+						"type": "uint256[]"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "itemQuantity",
+						"type": "uint256[]"
+					}
+				],
+				"internalType": "struct AllOrNothing.Reward",
+				"name": "reward",
+				"type": "tuple"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "backer",
+				"type": "address"
+			},
+			{
+				"internalType": "bytes32[]",
+				"name": "reward",
+				"type": "bytes32[]"
+			}
+		],
+		"name": "pledgeForAReward",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "backer",
+				"type": "address"
+			}
+		],
+		"name": "pledgeOnPreLaunch",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "backer",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "pledgeAmount",
+				"type": "uint256"
+			}
+		],
+		"name": "pledgeWithoutAReward",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "bytes32",
+				"name": "rewardName",
+				"type": "bytes32"
+			}
+		],
+		"name": "removeReward",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "token",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "bool",
+				"name": "isDisbursed",
+				"type": "bool"
+			},
+			{
+				"internalType": "uint256",
+				"name": "protocolFeeAmount",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "platformFeeAmount",
+				"type": "uint256"
+			}
+		],
+		"name": "updateFiatFeeDisbursementState",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "bytes32",
+				"name": "fiatPledgeId",
+				"type": "bytes32"
+			},
+			{
+				"internalType": "uint256",
+				"name": "fiatPledgeAmount",
+				"type": "uint256"
+			}
+		],
+		"name": "updateFiatPledge",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	}
+]
