@@ -1,3 +1,29 @@
+# Backend Scratch
+
+This repository contains a project scratch built using ExpressJs(javascript), SQL(PostgreSQL being the preferred database), Sequelize(ORM). Basic configuration for starting up the API server is already configured.
+
+## File structure
+
+- `abi/` - Contains the latest ABIs from deployed smart contracts
+- `config/` - Contains all configurations (imported from environment variables)
+- `routes/` - Contains list of routes which map to different controllers and middleware
+- `middleware/` - Contains various middleware functionalities used by different routes
+- `controller/` - Contains handler functions for all kinds of routes
+- `repository/` - Contains functions for database interactions
+- `service/` - Contains functions which perform specialized (often extended) tasks 
+- `util/` - Contains utility functions
+- `model/` - Contains all models for the database
+- `app.js` - Configure the application and all high-level routes
+- `server.js` - Entrypoint for running application
+- `.env` - Contains environment variables (sample provided in `sample.env`)
+
+## Useful commands
+
+```bash
+# Start server
+npm start
+```
+
 ### Celo Alfajores Testnet
 - **RPCEndpoint:** [https://alfajores-forno.celo-testnet.org](https://alfajores-forno.celo-testnet.org)
 - **ChainID:** 44787
