@@ -32,7 +32,7 @@ Request Body:
 **Success Response:**
 ```
 {
-“success”: 200
+"success": 200
 }
 ```
 **Error Response:**
