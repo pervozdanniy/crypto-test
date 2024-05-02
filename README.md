@@ -60,9 +60,13 @@ The smart contracts are deployed with Celo Alfajores Network
 
 ## Celo Alfajores Testnet
 RPCEndpoint: [https://alfajores-forno.celo-testnet.org](https://alfajores-forno.celo-testnet.org)
+
 ChainID: 44787
+
 NativeCurrency: CELO
+
 BlockExplorer: [https://alfajores-blockscout.celo-testnet.org](https://alfajores-blockscout.celo-testnet.org)
+
 Faucet: [https://celo.org/developers/faucet](https://celo.org/developers/faucet)
 
 ## Optional Extensions:
