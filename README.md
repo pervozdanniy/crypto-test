@@ -55,6 +55,7 @@ CCToken Contract Address: [0x5AA7425b850b1697503FeA4e7462AFf9DD38f71d](https://a
 AllOrNothing Contract Address: [0xF39849BE6609DCc91f02b207Ecc83a1E2b1c5671](https://alfajores.celoscan.io/address/0xF39849BE6609DCc91f02b207Ecc83a1E2b1c5671)
 
 Sample User Wallet Account Address with Prefunded CCToken: [0xC3Ff9976E76c9737c92c4eC0e918c677C1285668](https://alfajores.celoscan.io/address/0xC3Ff9976E76c9737c92c4eC0e918c677C1285668)
+
 Private Key: `f1ecebcdf15173fbeca41f4efc1e79b2b125060470ed0cc542987a300011187a`
 
 The smart contracts are deployed with Celo Alfajores Network  
